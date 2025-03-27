@@ -41,9 +41,9 @@ public class Player {
             if (treasure.getClass().getSimpleName().equals("Turquoise")) {
                 totalScore += treasure.getValue();
             } else if (treasure.getClass().getSimpleName().equals("Obsidian")) {
-                totalScore += treasure.getValue() * 5;
+                totalScore += treasure.getValue();
             } else if (treasure.getClass().getSimpleName().equals("Gold")) {
-                totalScore += treasure.getValue() * 10;
+                totalScore += treasure.getValue();
             }
         }
         this.score = totalScore;
