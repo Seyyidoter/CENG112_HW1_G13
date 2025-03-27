@@ -13,6 +13,6 @@ public abstract class QuestCard {
     }
 
     public boolean equals(QuestCard card){
-        return false; // will be coded.
+        return this.name.equals(card.name);
     }
 }

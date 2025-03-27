@@ -1,4 +1,5 @@
 package data;
+import model.Gold;
 import model.Treasure;
 
 public class Tent extends Bag<Treasure>{
@@ -8,6 +9,6 @@ public class Tent extends Bag<Treasure>{
     }
 
     private void initializeTent(){
-        //tent will be initialized.
+        add(new Gold());
     }
 }

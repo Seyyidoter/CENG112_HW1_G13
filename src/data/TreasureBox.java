@@ -7,4 +7,8 @@ public class TreasureBox extends QuestCard{
         super(name);
     }
 
+    public String getName(){
+        return this.name;
+    }
+
 }
