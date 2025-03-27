@@ -35,11 +35,9 @@ public class Player {
     public int calculateScore() {
         int totalScore = 0;
 
-        // Iterate through tent treasures
         while (!tent.isEmpty()) {
             Treasure treasure = tent.remove();
 
-            // Calculate value based on treasure type
             if (treasure.getClass().getSimpleName().equals("Turquoise")) {
                 totalScore += treasure.getValue();
             } else if (treasure.getClass().getSimpleName().equals("Obsidian")) {
