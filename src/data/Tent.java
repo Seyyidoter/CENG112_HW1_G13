@@ -9,6 +9,6 @@ public class Tent extends Bag<Treasure>{
     }
 
     private void initializeTent(){
-        add(new Gold());
+        
     }
 }
