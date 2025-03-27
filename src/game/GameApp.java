@@ -2,6 +2,8 @@ package game;
 
 public class GameApp {
     public static void main(String[] args) {
-        Player player1 = new Player();
+        Game game = new Game();
+        game.initializeGameComponents();
+        game.play();
     }
 }

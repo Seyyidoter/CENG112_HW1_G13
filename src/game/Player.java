@@ -2,6 +2,8 @@ package game;
 import data.HazardBox;
 import data.TreasureBox;
 import data.Tent;
+import model.Treasure;
+
 
 public class Player {
     private String name;
@@ -10,6 +12,13 @@ public class Player {
     private Tent tent;
     private TreasureBox treasureBox;
     private HazardBox hazardBox;
+
+    public Player(String name){
+        this.name = name;
+        this.score = 0;
+        this.treasureBox = new TreasureBox();
+        this.hazardBox = new HazardBox();
+    }
 
     public String getName(){
         return name;
@@ -20,11 +29,27 @@ public class Player {
     }
 
     public int rollDice(){
-        return 0; // will be coded.
+        return (int) (Math.random() * 30);
     }
 
-    public int calculateScore(){
-        return 0; // will be coded.
+    public int calculateScore() {
+        int totalScore = 0;
+
+        // Iterate through tent treasures
+        while (!tent.isEmpty()) {
+            Treasure treasure = tent.remove();
+
+            // Calculate value based on treasure type
+            if (treasure.getClass().getSimpleName().equals("Turquoise")) {
+                totalScore += treasure.getValue();
+            } else if (treasure.getClass().getSimpleName().equals("Obsidian")) {
+                totalScore += treasure.getValue() * 5;
+            } else if (treasure.getClass().getSimpleName().equals("Gold")) {
+                totalScore += treasure.getValue() * 10;
+            }
+        }
+        this.score = totalScore;
+        return score;
     }
 
     public String toString(){

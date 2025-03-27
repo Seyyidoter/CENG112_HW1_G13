@@ -1,14 +1,17 @@
 package data;
 import model.QuestCard;
+import model.TreasureCard;
 
-public class TreasureBox extends QuestCard{
+public class TreasureBox extends Bag<TreasureCard>{
 
-    public TreasureBox(String name){
-        super(name);
+    public TreasureBox(){
+        super();
     }
 
-    public String getName(){
-        return this.name;
+    public int calculateValue(){
+        int total = 0;
+
     }
+
 
 }

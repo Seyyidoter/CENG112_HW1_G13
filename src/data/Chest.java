@@ -9,7 +9,7 @@ public class Chest extends Bag<Treasure>{
         super();
         initializeChest();
     }
-    private void initializeChest(){
+    public void initializeChest(){
         for (int i = 0; i < 195; i++){
             add(new Turquoise());
         }
