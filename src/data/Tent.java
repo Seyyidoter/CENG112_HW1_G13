@@ -9,6 +9,6 @@ public class Tent extends Bag<Treasure>{
     }
 
     private void initializeTent(){
-        
+        //will be coded.
     }
 }
