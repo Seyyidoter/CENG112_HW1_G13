@@ -15,8 +15,8 @@ public class Game {
     private Chest chest;
 
     // create elements when the game starts
-    public void initializeGameComponents() {
-        player = new Player("Seyyid");
+    public void initializeGameComponents(String name) {
+        player = new Player(name);
         box = new Box();
         box.initializeBox();
         chest = new Chest();
