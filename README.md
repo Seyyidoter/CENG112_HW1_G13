@@ -1,3 +1,5 @@
+Incan Gold Game - Java Project
+=======
 Incan Gold Game - Java Project HW1
 CENG112 - Data Structures
 Izmir Institute of Technology (IZTECH) - Spring 2025
@@ -82,4 +84,3 @@ NOTES
 - All classes and methods are implemented according to the official assignment PDF.
 - The project follows object-oriented design principles.
 - Can be compiled and executed using a standard Java development environment.
-
