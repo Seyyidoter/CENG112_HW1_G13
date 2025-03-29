@@ -18,4 +18,9 @@ public abstract class QuestCard {
     public boolean equals(QuestCard card){
         return this.name.equals(card.name);
     }
+
+    public String getName(){
+        return name;
+    }
+    
 }
