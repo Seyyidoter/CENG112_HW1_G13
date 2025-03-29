@@ -43,15 +43,9 @@ public class Player {
         //until tent is empty pick every treasure and add its value to totalscore
         while (!tent.isEmpty()) {
             Treasure treasure = tent.remove();
-
-            if (treasure.getClass().getSimpleName().equals("Turquoise")) {
-                totalScore += treasure.getValue();
-            } else if (treasure.getClass().getSimpleName().equals("Obsidian")) {
-                totalScore += treasure.getValue();
-            } else if (treasure.getClass().getSimpleName().equals("Gold")) {
-                totalScore += treasure.getValue();
+            totalScore += treasure.getValue();
             }
-        }
+            
         this.score = totalScore;
         return score;
     }

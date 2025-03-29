@@ -10,11 +10,16 @@ public class TreasureCard extends QuestCard{
         this.value = value;
     }
 
-    public String toString(){
-        return treasure.toString();
+    @Override
+    public String toString() {
+        return "Treasure: " + treasure.getClass().getSimpleName() + " x" + value;
     }
 
     public int getValue(){
         return value;
+    }
+
+    public Treasure getTreasure() {
+        return treasure;
     }
 }

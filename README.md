@@ -1,4 +1,6 @@
 Incan Gold Game - Java Project
+=======
+Incan Gold Game - Java Project HW1
 CENG112 - Data Structures
 Izmir Institute of Technology (IZTECH) - Spring 2025
 
