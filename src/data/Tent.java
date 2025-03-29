@@ -1,5 +1,4 @@
 package data;
-import model.Gold;
 import model.Treasure;
 
 public class Tent extends Bag<Treasure>{

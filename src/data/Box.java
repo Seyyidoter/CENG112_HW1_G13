@@ -13,7 +13,7 @@ public class Box extends Bag<QuestCard> {
 
         add(new TreasureCard("Gold", new Gold(), 3));
         add(new TreasureCard("Gold", new Gold(), 6));
-        add(new TreasureCard("Gold", new Gold(), 15));
+        add(new TreasureCard("Gold", new Gold(), 9));
         add(new TreasureCard("Gold", new Gold(), 12));
         add(new TreasureCard("Gold", new Gold(), 15));
         add(new TreasureCard("Turquoise", new Turquoise(), 33));

@@ -1,8 +1,7 @@
 package data;
-import model.HazardCard;
 import model.QuestCard;
 
-public class HazardBox extends Bag<HazardCard>{
+public class HazardBox extends Bag<QuestCard>{
 
     public HazardBox(){
         super();
