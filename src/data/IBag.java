@@ -1,5 +1,7 @@
 package data;
 
+//This interface defines the basic operations of every bag
+//used generic to store any kind of object type
 public interface IBag<T> {
     public boolean add(T anEntry);
     public boolean isEmpty();
