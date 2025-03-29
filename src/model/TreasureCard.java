@@ -12,7 +12,7 @@ public class TreasureCard extends QuestCard{
 
     @Override
     public String toString() {
-        return "Treasure: " + treasure.getClass().getSimpleName() + " x" + value;
+        return "Treasure: " + treasure.getClass().getSimpleName() + " x" + value + " (Unit value: " + treasure.getValue() + ")";
     }
 
     public int getValue(){
