@@ -82,5 +82,3 @@ NOTES
 - All classes and methods are implemented according to the official assignment PDF.
 - The project follows object-oriented design principles.
 - Can be compiled and executed using a standard Java development environment.
-
-Enjoy the game! 🎮
