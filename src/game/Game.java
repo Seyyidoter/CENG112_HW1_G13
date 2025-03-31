@@ -102,5 +102,5 @@ public class Game {
 
     int finalScore = player.calculateScore(); // calculate total score from tent
     System.out.println("Final score is: " + finalScore);
-}
+    }
 }
