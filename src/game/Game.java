@@ -21,48 +21,40 @@ public class Game {
     public void claimTreasures(TreasureBox treasureBox) {
         while (!treasureBox.isEmpty()) {
             QuestCard card = treasureBox.remove();
+
+            TreasureCard tCard = (TreasureCard) card;
+            int count = tCard.getValue(); // how many treasures will be transferred
+            Class<?> targetType = tCard.getTreasure().getClass();
     
-            if (card instanceof TreasureCard) {
-                TreasureCard tCard = (TreasureCard) card;
-                int count = tCard.getValue(); // how many treasures will be transferred
-                Class<?> targetType = tCard.getTreasure().getClass();
+            // temporarily store matching treasures
+            Treasure[] matched = new Treasure[count];
+            int found = 0;
     
-                // temporarily store matching treasures
-                Treasure[] matched = new Treasure[count];
-                int found = 0;
+            // store all chest contents temporarily
+            int originalSize = chest.getCurrentSize();
+            Treasure[] temp = new Treasure[originalSize];
+            int tempIndex = 0;
     
-                // store all chest contents temporarily
-                int originalSize = chest.getCurrentSize();
-                Treasure[] temp = new Treasure[originalSize];
-                int tempIndex = 0;
-    
-                while (!chest.isEmpty()) {
-                    Treasure treasure = chest.remove();
-                    if (treasure.getClass().equals(targetType) && found < count) {
-                        matched[found++] = treasure;
-                    } else {
-                        temp[tempIndex++] = treasure;
-                    }
-                }
-    
-                // if enough treasures found, add to tent
-                if (found == count) {
-                    for (int i = 0; i < count; i++) {
-                        player.getTent().add(matched[i]);
-                    }
+            while (!chest.isEmpty()) {
+                Treasure treasure = chest.remove();
+                if (treasure.getClass().equals(targetType) && found < count) {
+                    matched[found++] = treasure;
                 } else {
-                    System.out.println(" Not enough " + targetType.getSimpleName() + " in chest. Skipped this card.");
-                    // put back matched ones as well
-                    for (int i = 0; i < found; i++) {
-                        temp[tempIndex++] = matched[i];
-                    }
-                }
-    
-                // put back the rest of chest
-                for (int i = 0; i < tempIndex; i++) {
-                    chest.add(temp[i]);
+                    temp[tempIndex++] = treasure;
                 }
             }
+    
+            // if enough treasures found, add to tent
+            if (found == count) {
+                for (int i = 0; i < count; i++) {
+                    player.getTent().add(matched[i]);
+                }
+            }
+    
+            // put back the rest of chest
+            for (int i = 0; i < tempIndex; i++) {
+                chest.add(temp[i]);
+            }            
         }
     }
     
