@@ -1,12 +1,6 @@
 package game;
-
-import data.Box;
-import data.Chest;
-import data.TreasureBox;
-import model.HazardCard;
-import model.QuestCard;
-import model.Treasure;
-import model.TreasureCard;
+import data.*;
+import model.*;
 
 public class Game {
     private int numberOfRounds = 5;
