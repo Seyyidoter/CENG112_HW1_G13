@@ -3,7 +3,7 @@ import data.*;
 import model.*;
 
 public class Game {
-    private int numberOfRounds = 5;
+    private final int numberOfRounds = 5;
     private Player player;
     private Box box;
     private Chest chest;
