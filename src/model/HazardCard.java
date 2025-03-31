@@ -9,6 +9,6 @@ public class HazardCard extends QuestCard{
     //to write card type and name
     @Override
     public String toString(){
-        return "Hazard" + super.toString();
+        return "Hazard: " + super.toString();
     }
 }
