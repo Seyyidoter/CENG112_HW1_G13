@@ -72,43 +72,49 @@ public class Game {
         }
     }
     
-
     public void play() {
-        System.out.println("Game started for " + player.getName() + "\n");
+    System.out.println("Game started for " + player.getName() + "\n");
 
-        // main game loop – 5 rounds
-        for (int round = 1; round <= numberOfRounds; round++) {
-            System.out.println("Round " + round);
+    // main game loop – 5 rounds
+    for (int round = 1; round <= numberOfRounds; round++) {
+        System.out.println("Round " + round);
 
-            // draw 3 cards for one round
-            for (int x = 0; x < 3; x++) {
-                int index = player.rollDice(); // pick a card
-                QuestCard card = box.removeByIndex(index); // remove the card from the box
-
-                if (card instanceof HazardCard) {
-                    player.getHazardBox().add(card);
-                    System.out.println("Drawn: " + card);
-                } else if (card instanceof TreasureCard) {
-                    player.getTreasureBox().add(card);
-                    System.out.println("Drawn: " + card);
-                }
+        // draw 3 cards for one round
+        for (int x = 0; x < 3; x++) {
+            // Only roll within the current valid range
+            int maxIndex = box.getCurrentSize() - 1;
+            if (maxIndex < 0) {
+                System.out.println("No more cards in the box!");
+                break;
             }
+            
+            int index = (int)(Math.random() * (maxIndex + 1)); // Random index based on current size
+            QuestCard card = box.removeByIndex(index); // remove the card from the box
 
-            System.out.println(); // adds space between rounds
+            if (card instanceof HazardCard) {
+                player.getHazardBox().add(card);
+                System.out.println("Drawn: " + card);
+            } else if (card instanceof TreasureCard) {
+                player.getTreasureBox().add(card);
+                System.out.println("Drawn: " + card);
+            }
         }
 
-        // win or lose condition
-        int hazards = player.getHazardBox().getCurrentSize();
-        int treasures = player.getTreasureBox().getCurrentSize();
-
-        if (hazards > treasures) {
-            System.out.println("You lost");
-        } else {
-            System.out.println("You won");
-            claimTreasures(player.getTreasureBox()); // transfer treasures from treasureBox to tent
-        }
-
-        int finalScore = player.calculateScore(); // calculate total score from tent
-        System.out.println("Final score is: " + finalScore);
+        System.out.println(); // adds space between rounds
     }
+
+    // win or lose condition
+    int hazards = player.getHazardBox().getCurrentSize();
+    int treasures = player.getTreasureBox().getCurrentSize();
+
+    if (hazards > treasures) {
+        System.out.println("You lost");
+    } else {
+        System.out.println("You won");
+        claimTreasures(player.getTreasureBox()); // transfer treasures from treasureBox to tent
+    }
+
+    int finalScore = player.calculateScore(); // calculate total score from tent
+    System.out.println("Final score is: " + finalScore);
+}
 }
