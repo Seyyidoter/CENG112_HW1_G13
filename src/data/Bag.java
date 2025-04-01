@@ -20,7 +20,7 @@ public class Bag<T> implements IBag<T> {
     @Override
     public boolean add(T newEntry) {
         if(isFull()){
-            resize(); //If bag is full, than resize method doubles capacity
+            resize(); //If bag is full, then resize method doubles capacity
         }
         bag[numberOfEntries] = newEntry;
         numberOfEntries++;
@@ -110,16 +110,16 @@ public class Bag<T> implements IBag<T> {
             if(bag[i] == anEntry){
                 return index;
             }else{
-                index++; //If item doesn't exists in the default index, than increase the default index value by one
+                index++; //If item doesn't exist in the default index, then increase the default index value by one
             }
-        }return -1; //If entry doesn't exists than return -1
+        }return -1; //If entry doesn't exist than return -1
     }
 
     @Override
     public int getFrequencyOf(T anEntry) {
         //Start with a default frequency value
         int frequency = 0;
-        //Search elements in the list, if find the given entry than frequency++
+        //Search elements in the list, if we find the given entry than frequency++
         for(int i = 0; i < bag.length; i++){
             if(bag[i] == anEntry){
                 frequency++;
@@ -141,7 +141,7 @@ public class Bag<T> implements IBag<T> {
                 }
                 return true;
             }
-        }return false; //If given entry does not exists than return false
+        }return false; //If given entry does not exist than return false
     }
 
     @SuppressWarnings("unchecked")
