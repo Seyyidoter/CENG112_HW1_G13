@@ -94,7 +94,7 @@ public class Bag<T> implements IBag<T> {
     @Override
     public boolean contains(T anEntry) {
         //Search each element to find given entry
-        for(int i = 0; i < bag.length; i++){
+        for(int i = 0; i < numberOfEntries; i++){
             if(bag[i] == anEntry){
                 return true; //If it exists, then return true
             }
@@ -106,7 +106,7 @@ public class Bag<T> implements IBag<T> {
         //Start with a default index
         int index = 0;
         //Search elements with for loop
-        for(int i = 0; i < bag.length; i++){
+        for(int i = 0; i < numberOfEntries; i++){
             if(bag[i] == anEntry){
                 return index;
             }else{
@@ -120,7 +120,7 @@ public class Bag<T> implements IBag<T> {
         //Start with a default frequency value
         int frequency = 0;
         //Search elements in the list, if we find the given entry then frequency++
-        for(int i = 0; i < bag.length; i++){
+        for(int i = 0; i < numberOfEntries; i++){
             if(bag[i] == anEntry){
                 frequency++;
             }
