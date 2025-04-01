@@ -103,7 +103,7 @@ public class Game {
     if (hazards > treasures) {
         System.out.println("You lost");
     } else {
-        System.out.println("You won");
+        System.out.println("You won " + player.getName());
         //Transfer treasures from treasureBox to tent
         claimTreasures(player.getTreasureBox()); 
     }
