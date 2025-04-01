@@ -1,7 +1,5 @@
 package game;
-import data.HazardBox;
-import data.TreasureBox;
-import data.Tent;
+import data.*
 import model.Treasure;
 
 
