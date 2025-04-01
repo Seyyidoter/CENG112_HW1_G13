@@ -35,8 +35,8 @@ public class Player {
     //This method gives a number from the proper interval
     //We will use it to choose random card
     public int rollDice(Box currentBox){
-        int maxIndex = currentBox.getCurrentSize() - 1;
-        return (int)(Math.random() * (maxIndex + 1));
+        int maxIndex = currentBox.getCurrentSize() - 1; //Each round, the drawn card is removed from the box so max index is changing.
+        return (int)(Math.random() * (maxIndex + 1));  //A value suitable for the new upper limit is returned from the dice.
     }
 
     //Calculate the score with considering items in tent
