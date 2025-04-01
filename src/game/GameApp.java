@@ -1,13 +1,13 @@
 package game;
 
-//gameapp starts the game
+//Gameapp starts the game
 public class GameApp {
     public static void main(String[] args) {
-        //create new game object
+        //Create new game object
         Game game = new Game();
-        //initialize the game with name
+        //Initialize the game with name
         game.initializeGameComponents("Seyyid");
-        //start the game
+        //Start the game
         game.play();
     }
 }
