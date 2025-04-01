@@ -3,7 +3,9 @@ import data.*;
 import model.*;
 
 public class Game {
+    //total number of rounds in our game
     private final int numberOfRounds = 5;
+    //game elements
     private Player player;
     private Box box;
     private Chest chest;
@@ -12,14 +14,15 @@ public class Game {
     public void initializeGameComponents(String name) {
         player = new Player(name);
         box = new Box();
-        box.initializeBox();
+        box.initializeBox(); //fill the box
         chest = new Chest();
-        chest.initializeChest();
+        chest.initializeChest(); //fill the chest
     }
 
     // add treasure cards from treasure box to tent
     public void claimTreasures(TreasureBox treasureBox) {
         while (!treasureBox.isEmpty()) {
+            //remove treasure card
             QuestCard card = treasureBox.remove();
 
             TreasureCard tCard = (TreasureCard) card;
@@ -34,7 +37,8 @@ public class Game {
             int originalSize = chest.getCurrentSize();
             Treasure[] temp = new Treasure[originalSize];
             int tempIndex = 0;
-    
+
+            //scan chest for matches
             while (!chest.isEmpty()) {
                 Treasure treasure = chest.remove();
                 if (treasure.getClass().equals(targetType) && found < count) {
@@ -57,7 +61,7 @@ public class Game {
             }            
         }
     }
-    
+    //start game
     public void play() {
     System.out.println("Game started for " + player.getName() + "\n");
 
@@ -73,10 +77,13 @@ public class Game {
                 System.out.println("No more cards in the box!");
                 break;
             }
-            
-            int index = (int)(Math.random() * (maxIndex + 1)); // Random index based on current size
-            QuestCard card = box.removeByIndex(index); // remove the card from the box
 
+            // Random index based on current size
+            int index = (int)(Math.random() * (maxIndex + 1)); 
+            // remove the card from the box
+            QuestCard card = box.removeByIndex(index); 
+
+            //add card to box
             if (card instanceof HazardCard) {
                 player.getHazardBox().add(card);
                 System.out.println("Drawn: " + card);
@@ -86,7 +93,7 @@ public class Game {
             }
         }
 
-        System.out.println(); // adds space between rounds
+        System.out.println(); // adds empty line between rounds
     }
 
     // win or lose condition
@@ -97,10 +104,12 @@ public class Game {
         System.out.println("You lost");
     } else {
         System.out.println("You won");
-        claimTreasures(player.getTreasureBox()); // transfer treasures from treasureBox to tent
+        // transfer treasures from treasureBox to tent
+        claimTreasures(player.getTreasureBox()); 
     }
 
-    int finalScore = player.calculateScore(); // calculate total score from tent
+    // calculate total score from tent
+    int finalScore = player.calculateScore(); 
     System.out.println("Final score is: " + finalScore);
     }
 }
