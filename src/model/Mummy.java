@@ -1,8 +1,8 @@
 package model;
 
-//mummy is a hazard card
+//Mummy is a hazard card
 public class Mummy extends HazardCard{
     public Mummy(){
-        super("Mummy"); //constructor sets the name
+        super("Mummy"); //Constructor sets the name
     }
 }
