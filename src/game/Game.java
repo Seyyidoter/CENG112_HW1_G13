@@ -27,7 +27,7 @@ public class Game {
 
             TreasureCard tCard = (TreasureCard) card;
             int count = tCard.getValue(); //How many treasures will be transferred
-            Class<?> targetType = tCard.getTreasure().getClass();
+            String treasureType = tCard.getTreasure().getClass().getSimpleName();
     
             //Temporarily store matching treasures
             Treasure[] matched = new Treasure[count];
@@ -41,7 +41,7 @@ public class Game {
             //Scan chest for matches
             while (!chest.isEmpty()) {
                 Treasure treasure = chest.remove();
-                if (treasure.getClass().equals(targetType) && found < count) {
+                if (treasure.getClass().getSimpleName().equals(treasureType) && found < count) {
                     matched[found++] = treasure;
                 } else {
                     temp[tempIndex++] = treasure;
