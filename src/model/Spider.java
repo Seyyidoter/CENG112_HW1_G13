@@ -1,8 +1,8 @@
 package model;
 
-//spider is a hazard card
+//Spider is a hazard card
 public class Spider extends HazardCard{
     public Spider(){
-        super("Spider"); //constructor sets the name
+        super("Spider"); //Constructor sets the name
     }
 }
