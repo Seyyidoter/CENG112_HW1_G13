@@ -3,42 +3,42 @@ import data.*;
 import model.*;
 
 public class Game {
-    //total number of rounds in our game
+    //Total number of rounds in our game
     private final int numberOfRounds = 5;
-    //game elements
+    //Game elements
     private Player player;
     private Box box;
     private Chest chest;
 
-    // create elements when the game starts
+    //Create elements when the game starts
     public void initializeGameComponents(String name) {
         player = new Player(name);
         box = new Box();
-        box.initializeBox(); //fill the box
+        box.initializeBox(); //Fill the box
         chest = new Chest();
-        chest.initializeChest(); //fill the chest
+        chest.initializeChest(); //Fill the chest
     }
 
-    // add treasure cards from treasure box to tent
+    //Add treasure cards from treasure box to tent
     public void claimTreasures(TreasureBox treasureBox) {
         while (!treasureBox.isEmpty()) {
-            //remove treasure card
+            //Remove treasure card
             QuestCard card = treasureBox.remove();
 
             TreasureCard tCard = (TreasureCard) card;
-            int count = tCard.getValue(); // how many treasures will be transferred
+            int count = tCard.getValue(); //How many treasures will be transferred
             Class<?> targetType = tCard.getTreasure().getClass();
     
-            // temporarily store matching treasures
+            //Temporarily store matching treasures
             Treasure[] matched = new Treasure[count];
             int found = 0;
     
-            // store all chest contents temporarily
+            //Store all chest contents temporarily
             int originalSize = chest.getCurrentSize();
             Treasure[] temp = new Treasure[originalSize];
             int tempIndex = 0;
 
-            //scan chest for matches
+            //Scan chest for matches
             while (!chest.isEmpty()) {
                 Treasure treasure = chest.remove();
                 if (treasure.getClass().equals(targetType) && found < count) {
@@ -48,42 +48,42 @@ public class Game {
                 }
             }
     
-            // if enough treasures found, add to tent
+            //If enough treasures found, add to tent
             if (found == count) {
                 for (int i = 0; i < count; i++) {
                     player.getTent().add(matched[i]);
                 }
             }
     
-            // put back the rest of chest
+            //Put back the rest of chest
             for (int i = 0; i < tempIndex; i++) {
                 chest.add(temp[i]);
             }            
         }
     }
-    //start game
+    //Start game
     public void play() {
     System.out.println("Game started for " + player.getName() + "\n");
 
-    // main game loop – 5 rounds
+    //Main game loop – 5 rounds
     for (int round = 1; round <= numberOfRounds; round++) {
         System.out.println("Round " + round);
 
-        // draw 3 cards for one round
+        //Draw 3 cards for one round
         for (int x = 0; x < 3; x++) {
-            // Only roll within the current valid range
+            //Only roll within the current valid range
             int maxIndex = box.getCurrentSize() - 1;
             if (maxIndex < 0) {
                 System.out.println("No more cards in the box!");
                 break;
             }
 
-            // Random index based on current size
+            //Random index based on current size
             int index = (int)(Math.random() * (maxIndex + 1)); 
-            // remove the card from the box
+            //Remove the card from the box
             QuestCard card = box.removeByIndex(index); 
 
-            //add card to box
+            //Add card to box
             if (card instanceof HazardCard) {
                 player.getHazardBox().add(card);
                 System.out.println("Drawn: " + card);
@@ -93,10 +93,10 @@ public class Game {
             }
         }
 
-        System.out.println(); // adds empty line between rounds
+        System.out.println(); //Adds empty line between rounds
     }
 
-    // win or lose condition
+    //Win or lose condition
     int hazards = player.getHazardBox().getCurrentSize();
     int treasures = player.getTreasureBox().getCurrentSize();
 
@@ -104,11 +104,11 @@ public class Game {
         System.out.println("You lost");
     } else {
         System.out.println("You won");
-        // transfer treasures from treasureBox to tent
+        //Transfer treasures from treasureBox to tent
         claimTreasures(player.getTreasureBox()); 
     }
 
-    // calculate total score from tent
+    //Calculate total score from tent
     int finalScore = player.calculateScore(); 
     System.out.println("Final score is: " + finalScore);
     }
