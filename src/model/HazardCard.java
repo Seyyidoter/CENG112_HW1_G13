@@ -1,9 +1,11 @@
 package model;
 
+//hazardcard is a kind of quest card
 public class HazardCard extends QuestCard{
 
+    //constructor
     public HazardCard(String name) {
-        super(name);
+        super(name); 
     }
 
     //to write card type and name
