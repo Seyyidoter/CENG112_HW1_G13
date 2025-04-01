@@ -1,6 +1,6 @@
 package model;
 
-//Hazardcard is a kind of quest card
+//HazardCard is a kind of quest card
 public class HazardCard extends QuestCard{
 
     //Constructor
