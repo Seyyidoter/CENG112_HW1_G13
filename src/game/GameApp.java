@@ -1,6 +1,6 @@
 package game;
 
-//Gameapp starts the game
+//GameApp starts the game
 public class GameApp {
     public static void main(String[] args) {
         //Create new game object
