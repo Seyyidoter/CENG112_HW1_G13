@@ -6,7 +6,7 @@ public class GameApp {
         //Create new game object
         Game game = new Game();
         //Initialize the game with name
-        game.initializeGameComponents("Seyyid");
+        game.initializeGameComponents("Seyyid and Kagan");
         //Start the game
         game.play();
     }
