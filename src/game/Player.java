@@ -34,7 +34,7 @@ public class Player {
         return score;
     }
 
-    //This method gives a number from the interval of 0-29
+    //This method gives a number from the proper interval
     //We will use it to choose random card
     public int rollDice(Box currentBox){
         int maxIndex = currentBox.getCurrentSize() - 1;
