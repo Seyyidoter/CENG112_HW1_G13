@@ -1,6 +1,6 @@
 package model;
 
-//Questcard is all cards's super class
+//QuestCard is all cards's super class
 public abstract class QuestCard {
     private String name;
 
@@ -14,7 +14,7 @@ public abstract class QuestCard {
         return name;
     }
 
-    //For card comparasions
+    //For card comparisons
     public boolean equals(QuestCard card){
         return this.name.equals(card.name);
     }
