@@ -71,11 +71,8 @@ public class Game {
 
         //Draw 3 cards for one round
         for (int x = 0; x < 3; x++) {
-            //Only roll within the current valid range
-            int maxIndex = box.getCurrentSize() - 1;
-
             //Random index based on current size
-            int index = (int)(Math.random() * (maxIndex + 1)); 
+            int index = player.rollDice(box);
             //Remove the card from the box
             QuestCard card = box.removeByIndex(index); 
 
