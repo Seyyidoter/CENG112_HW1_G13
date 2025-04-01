@@ -1,6 +1,6 @@
 package model;
 
-//QuestCard is all cards's super class
+//QuestCard is all cards super class
 public abstract class QuestCard {
     private String name;
 
