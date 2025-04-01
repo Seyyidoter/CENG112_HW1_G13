@@ -101,7 +101,7 @@ public class Game {
     int treasures = player.getTreasureBox().getCurrentSize();
 
     if (hazards > treasures) {
-        System.out.println("You lost");
+        System.out.println("You lost " + player.getName());
     } else {
         System.out.println("You won " + player.getName());
         //Transfer treasures from treasureBox to tent
