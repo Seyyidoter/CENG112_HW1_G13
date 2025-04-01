@@ -4,17 +4,17 @@ import model.Obsidian;
 import model.Treasure;
 import model.Turquoise;
 
-//chest holds treasure objects
+//Chest holds treasure objects
 public class Chest extends Bag<Treasure>{
     public Chest() {
-        super(); //bag's constructor
-        //all treasures must be in the chest at first
+        super(); //Bag's constructor
+        //All treasures must be in the chest at first
         initializeChest();
     }
-    //constructor
+    //Constructor
     public void initializeChest(){
-        //fill the chest with treasures
-        // 195 Turquoise
+        //Fill the chest with treasures
+        //195 Turquoise
         for (int i = 0; i < 195; i++){
             add(new Turquoise());
         }
@@ -22,7 +22,7 @@ public class Chest extends Bag<Treasure>{
         for (int i = 0; i < 120; i++){
             add(new Obsidian());
         }
-        // 45 Gold
+        //45 Gold
         for (int i = 0; i < 45; i++){
             add(new Gold());
         }
