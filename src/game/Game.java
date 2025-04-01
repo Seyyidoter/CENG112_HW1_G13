@@ -34,8 +34,8 @@ public class Game {
             int found = 0;
     
             //Store all chest contents temporarily
-            int originalSize = chest.getCurrentSize();
-            Treasure[] temp = new Treasure[originalSize];
+            int chestSize = chest.getCurrentSize();
+            Treasure[] temp = new Treasure[chestSize];
             int tempIndex = 0;
 
             //Scan chest for matches
