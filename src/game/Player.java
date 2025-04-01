@@ -1,5 +1,5 @@
 package game;
-import data.*
+import data.*;
 import model.Treasure;
 
 
