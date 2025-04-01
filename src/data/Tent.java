@@ -1,10 +1,10 @@
 package data;
 import model.Treasure;
 
-//tent will store the treasures which are earned by player
+//Tent will store the treasures which are earned by player
 public class Tent extends Bag<Treasure>{
-    //constructor
+    //Constructor
     public Tent(){   
-        super(); //call bag's constructor to create empty tent
+        super(); //Call bag's constructor to create empty tent
     }
 }
