@@ -73,10 +73,6 @@ public class Game {
         for (int x = 0; x < 3; x++) {
             //Only roll within the current valid range
             int maxIndex = box.getCurrentSize() - 1;
-            if (maxIndex < 0) {
-                System.out.println("No more cards in the box!");
-                break;
-            }
 
             //Random index based on current size
             int index = (int)(Math.random() * (maxIndex + 1)); 
