@@ -1,12 +1,12 @@
 package data;
 import model.QuestCard;
 
-//hazardbox will store drawn hazard cards
+//Hazardbox will store drawn hazard cards
 public class HazardBox extends Bag<QuestCard>{
 
-    //constructor
+    //Constructor
     public HazardBox(){
-        super(); //use bag's constructor to create empty box
+        super(); //Use bag's constructor to create empty box
     }
 
 }
