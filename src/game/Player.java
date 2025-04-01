@@ -18,7 +18,7 @@ public class Player {
     public Player(String name){
         this.name = name;
         this.score = 0;
-        //Create an empty tent, tresureBox and hazardBox
+        //Create an empty tent, treasureBox and hazardBox
         this.tent = new Tent();
         this.treasureBox = new TreasureBox(); 
         this.hazardBox = new HazardBox(); 
@@ -44,7 +44,7 @@ public class Player {
     public int calculateScore() {
         int totalScore = 0;
 
-        //Until tent is empty pick every treasure and add its value to totalscore
+        //Until tent is empty pick every treasure and add its value to totalScore
         while (!tent.isEmpty()) {
             Treasure treasure = tent.remove();
             totalScore += treasure.getValue();
@@ -59,7 +59,7 @@ public class Player {
         return "Player: " + name + " Score: " + score;
     }
 
-    //Getter for tent, treasurebox, hazardbox
+    //Getter for tent, treasureBox, hazardBox
     public Tent getTent() {
         return tent;
     }
