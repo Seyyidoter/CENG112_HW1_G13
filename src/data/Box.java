@@ -1,16 +1,19 @@
 package data;
 import model.*;
 
+//box extends bag to hold quest card objects
 public class Box extends Bag<QuestCard> {
+    //initialize box with cards
     public void initializeBox() {
         for(int i = 0; i < 3; i++){
+            //add hazard types
             add(new Snake());
             add(new Mummy());
             add(new Spider());
             add(new Fire());
             add(new Goblin());
         }
-
+        //add treasure cards
         add(new TreasureCard("Gold", new Gold(), 3));
         add(new TreasureCard("Gold", new Gold(), 6));
         add(new TreasureCard("Gold", new Gold(), 9));
