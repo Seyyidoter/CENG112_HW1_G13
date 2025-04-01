@@ -4,7 +4,7 @@ package model;
 public abstract class QuestCard {
     private String name;
 
-    //constructor, card name
+    //Constructor, card name
     public QuestCard(String name) {
         this.name = name;
     }
@@ -14,7 +14,7 @@ public abstract class QuestCard {
         return name;
     }
 
-    //for card comparasions
+    //For card comparasions
     public boolean equals(QuestCard card){
         return this.name.equals(card.name);
     }
