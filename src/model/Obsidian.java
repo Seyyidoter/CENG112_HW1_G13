@@ -1,8 +1,8 @@
 package model;
 
-//obsidian is a treasure card
+//Obsidian is a treasure card
 public class Obsidian extends Treasure{
     public Obsidian() {
-        super(5); //constructor sets the value
+        super(5); //Constructor sets the value
     }
 }
