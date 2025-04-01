@@ -96,7 +96,7 @@ public class Bag<T> implements IBag<T> {
         //Search each element to find given entry
         for(int i = 0; i < bag.length; i++){
             if(bag[i] == anEntry){
-                return true; //If it exists, than return true
+                return true; //If it exists, then return true
             }
         }return false;
     }
@@ -112,14 +112,14 @@ public class Bag<T> implements IBag<T> {
             }else{
                 index++; //If item doesn't exist in the default index, then increase the default index value by one
             }
-        }return -1; //If entry doesn't exist than return -1
+        }return -1; //If entry doesn't exist then return -1
     }
 
     @Override
     public int getFrequencyOf(T anEntry) {
         //Start with a default frequency value
         int frequency = 0;
-        //Search elements in the list, if we find the given entry than frequency++
+        //Search elements in the list, if we find the given entry then frequency++
         for(int i = 0; i < bag.length; i++){
             if(bag[i] == anEntry){
                 frequency++;
@@ -141,7 +141,7 @@ public class Bag<T> implements IBag<T> {
                 }
                 return true;
             }
-        }return false; //If given entry does not exist than return false
+        }return false; //If given entry does not exist then return false
     }
 
     @SuppressWarnings("unchecked")
