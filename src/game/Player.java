@@ -36,8 +36,9 @@ public class Player {
 
     //This method gives a number from the interval of 0-29
     //We will use it to choose random card
-    public int rollDice(){
-        return (int) (Math.random() * 30);
+    public int rollDice(Box currentBox){
+        int maxIndex = currentBox.getCurrentSize() - 1;
+        return (int)(Math.random() * (maxIndex + 1));
     }
 
     //Calculate the score with considering items in tent
