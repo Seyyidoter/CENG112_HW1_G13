@@ -131,7 +131,7 @@ public class Bag<T> implements IBag<T> {
     public boolean remove(T anEntry) {
         //Search the find given entry
         for(int i = 0; i < bag.length; i++){
-            if(bag[i] == anEntry){ 
+            if(bag[i].equals(anEntry)){ 
                 //If entry exists than make it null and decrase numberOfEntries by one
                 bag[i] = null;
                 numberOfEntries--;
