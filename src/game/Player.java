@@ -7,7 +7,8 @@ import model.Treasure;
 
 public class Player {
 
-    private String name; //player's name
+    //player's features
+    private String name; 
     private int score;
     private Tent tent;
     private TreasureBox treasureBox;
@@ -23,10 +24,12 @@ public class Player {
         this.hazardBox = new HazardBox(); 
     }
 
+    //getter for player name
     public String getName(){
         return name;
     }
 
+    //getter for score
     public int getScore(){
         return score;
     }
@@ -37,6 +40,7 @@ public class Player {
         return (int) (Math.random() * 30);
     }
 
+    //calculate the score with considering items in tent
     public int calculateScore() {
         int totalScore = 0;
 
